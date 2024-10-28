@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row justify-content-center">  <!-- Fixed typo here -->
+    <div class="col-md-6">
+        <div class="confirm-message text-center">
+            <form action="" method="post">  <!-- Form opening tag is now correctly used -->
+                {% csrf_token %}
+                <p>Are you sure you want to delete <q>{{note.title}}</q>?</p>
+                <p>This action can't be undone.</p>
+                <input type="submit" class="btn btn-sm btn-danger" value="confirm">  <!-- Fixed typo here -->
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
